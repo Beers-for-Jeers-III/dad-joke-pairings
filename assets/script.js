@@ -2,21 +2,20 @@ var jokeApiUrl = "https://api.humorapi.com/jokes/search?number=1&include-tags=da
 var userInput = "";
 var userValue = document.querySelector("#user-value");
 var searchInput = document.querySelector("#userForm");
-var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1by_city=' + userInput
+var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
 
 // curl -H "Accept: application/json" https://icanhazdadjoke.com/
 // var jokeApiUrl = 'https://api.humorapi.com/jokes/search?number=1&include-tags=dad&api-key=e4618d46550a4776901fb44e793e790e';
 
 function urlMaker() {
     var userInput = userValue.value;
-    var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1by_city=' + userInput
+    var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
     console.log("after revaluing", breweryApiUrl);
-    var newBrewUrl = breweryApiUrl;
-    return newBrewUrl
+    return breweryApiUrl;
 }
 
-function firstCallAttempt () {
-    console.log(newBrewUrl);
+function firstCallAttempt (breweryApiUrl) {
+    console.log(breweryApiUrl);
     fetch(breweryApiUrl)
         .then(function(response) {
             return response.json();
@@ -33,6 +32,6 @@ function firstCallAttempt () {
 
 searchInput.addEventListener("submit", function (event) {
     event.preventDefault();
-    urlMaker();
-    firstCallAttempt();
+    var url = urlMaker();
+    firstCallAttempt(url);
 });
