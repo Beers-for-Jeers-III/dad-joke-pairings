@@ -29,9 +29,22 @@ function firstCallAttempt (breweryApiUrl) {
                 infoBox.appendChild(brewName);
         }
 )};
-
+function getBadJoke() {
+  fetch("https://icanhazdadjoke.com/", {
+    headers: {
+      Accept:"application/json"
+    }
+  })
+  .then(function(response) {
+    return response.json();
+})
+.then(function (data) {
+  console.log(data)
+})
+}
 searchInput.addEventListener("submit", function (event) {
     event.preventDefault();
     var url = urlMaker();
     firstCallAttempt(url);
+    getBadJoke()
 });
