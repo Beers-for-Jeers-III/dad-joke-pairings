@@ -1,0 +1,18 @@
+body {
+    color: aqua;
+    font-size: 20px;
+}
+.textarea {
+    width: 50px;
+    font-size: 50px;
+    color: blue;
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size:x-large;
+}
+p {
+    text-align: center;
+    font-size: 300px;
+ }
