@@ -27,7 +27,12 @@ function firstCallAttempt (breweryApiUrl) {
                 brewName.appendChild(brewContent);
                 var infoBox = document.querySelector("#info-box");
                 infoBox.appendChild(brewName);
+        
+          localStorage.setItem(getBrewName, JSON.stringify(userInput));
         }
+
+        
+
 )};
 function getBadJoke() {
   fetch("https://icanhazdadjoke.com/", {
@@ -53,4 +58,5 @@ searchInput.addEventListener("submit", function (event) {
     var url = urlMaker();
     firstCallAttempt(url);
     getBadJoke()
+
 });
