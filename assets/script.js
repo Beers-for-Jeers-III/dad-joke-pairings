@@ -1,12 +1,11 @@
+//variables that will be used in this app
 var jokeApiUrl = "https://api.humorapi.com/jokes/search?number=1&include-tags=dad&api-key=e4618d46550a4776901fb44e793e790e";
 var userInput = "";
 var userValue = document.querySelector("#user-value");
 var searchInput = document.querySelector("#userForm");
 var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
 
-// curl -H "Accept: application/json" https://icanhazdadjoke.com/
-// var jokeApiUrl = 'https://api.humorapi.com/jokes/search?number=1&include-tags=dad&api-key=e4618d46550a4776901fb44e793e790e';
-
+//this function will make the URL from user input that will be needed for the brewery API call.
 function urlMaker() {
     var userInput = userValue.value;
     var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
@@ -14,8 +13,9 @@ function urlMaker() {
     return breweryApiUrl;
 }
 
+//this function calls the brewery api and appends the brewery data to the page
 function firstCallAttempt (breweryApiUrl) {
-    console.log(breweryApiUrl);
+    //console.log(breweryApiUrl);
     fetch(breweryApiUrl)
         .then(function(response) {
             return response.json();
@@ -34,6 +34,8 @@ function firstCallAttempt (breweryApiUrl) {
         
 
 )};
+
+//this function calls the joke api and appends the joke to the page
 function getBadJoke() {
   fetch("https://icanhazdadjoke.com/", {
     headers: {
@@ -53,6 +55,8 @@ function getBadJoke() {
   infoBox.appendChild(jokeElement);
 })
 }
+
+//this is calls the earlier functions in the script
 searchInput.addEventListener("submit", function (event) {
     event.preventDefault();
     var url = urlMaker();
