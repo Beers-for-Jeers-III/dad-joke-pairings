@@ -40,6 +40,12 @@ function getBadJoke() {
 })
 .then(function (data) {
   console.log(data)
+  var joke = data.joke;
+  var jokeElement = document.createElement("p");
+  var jokeContent = document.createTextNode(joke);
+  jokeElement.appendChild(jokeContent);
+  var infoBox = document.querySelector("#info-box");
+  infoBox.appendChild(jokeElement);
 })
 }
 searchInput.addEventListener("submit", function (event) {
