@@ -7,42 +7,27 @@ var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' +
 
 //this function will make the URL from user input that will be needed for the brewery API call.
 function urlMaker() {
-    var userInput = userValue.value;
-    var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
-    console.log("after revaluing", breweryApiUrl);
-    return breweryApiUrl;
+  var userInput = userValue.value;
+  var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
+  console.log("after revaluing", breweryApiUrl);
+  return breweryApiUrl;
 }
 
 //this function calls the brewery api and appends the brewery data to the page
 function firstCallAttempt (breweryApiUrl) {
-    //console.log(breweryApiUrl);
-    fetch(breweryApiUrl)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function (data) {
-                //console.log("brewery name", data[0].name);
-                if(data.length === 0) {  
-                  console.log(data);
-                  var infoBox = document.querySelector("#info-box");
-                  infoBox.append('Kegs Floated, try another city.');
-          }else{
-                var brewName = document.createElement("p");
-                var brewContent = document.createTextNode(data[0].name);
-                brewName.appendChild(brewContent);
-                var infoBox = document.querySelector("#info-box");
+  //console.log(breweryApiUrl);
+  fetch(breweryApiUrl)
+    .then(function(response) {
+      return response.json();
+      })
+    .then(function (data) {
+      //console.log("brewery name", data[0].name);
+      var brewName = document.createElement("p");
+      var brewContent = document.createTextNode(data[0].name);
+      brewName.appendChild(brewContent);
+      var infoBox = document.querySelector("#info-box");
                 infoBox.appendChild(brewName);
-
-
-          
-        
-              
-          }
-          localStorage.setItem(getBrewName, JSON.stringify(userInput));
         }
-
-        
-
 )};
 
 //this function calls the joke api and appends the joke to the page
@@ -72,5 +57,4 @@ searchInput.addEventListener("submit", function (event) {
     var url = urlMaker();
     firstCallAttempt(url);
     getBadJoke()
-
 });
