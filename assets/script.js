@@ -22,11 +22,22 @@ function firstCallAttempt (breweryApiUrl) {
         })
         .then(function (data) {
                 //console.log("brewery name", data[0].name);
+                if(data.length === 0) {  
+                  console.log(data);
+                  var infoBox = document.querySelector("#info-box");
+                  infoBox.append('Kegs Floated, try another city.');
+          }else{
                 var brewName = document.createElement("p");
                 var brewContent = document.createTextNode(data[0].name);
                 brewName.appendChild(brewContent);
                 var infoBox = document.querySelector("#info-box");
                 infoBox.appendChild(brewName);
+        
+
+          
+        
+                
+          }
         }
 )};
 

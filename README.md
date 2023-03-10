@@ -18,13 +18,13 @@ Projects are due at the end of class on Tuesday, March 14th.
 - [x] Design app wireframe
 - [x] Design app
 
-  ## Technologies
+## Technologies
 Our app was created using
 
     * HTML
     * JavaScript
     * Css
-    * Fontawesome
+    * Google Fonts
     * Local Storage
 
 ## Function
