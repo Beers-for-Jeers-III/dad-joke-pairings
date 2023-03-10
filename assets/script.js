@@ -27,7 +27,12 @@ function firstCallAttempt (breweryApiUrl) {
                 brewName.appendChild(brewContent);
                 var infoBox = document.querySelector("#info-box");
                 infoBox.appendChild(brewName);
+        
+          localStorage.setItem(getBrewName, JSON.stringify(userInput));
         }
+
+        
+
 )};
 
 //this function calls the joke api and appends the joke to the page
@@ -57,4 +62,5 @@ searchInput.addEventListener("submit", function (event) {
     var url = urlMaker();
     firstCallAttempt(url);
     getBadJoke()
+
 });
