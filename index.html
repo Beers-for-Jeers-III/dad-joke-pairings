@@ -6,35 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Beer 4 Jeers</title>
-    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
-    <h1>Beers for Jeers!</h1>
-    <h2>Select your drink!</h2>
-    <form id="userForm">
-        <input type="search" value="Choose your city!" id="user-value"></input>
-        <input type="submit"></input>
-    </form>
-    <div>
-        <h2>INFO PLACEHOLDER</h2>
-        <section id="info-box">
-        </section>
-    </div>
-        <section id="joke-box">
-            <p>Dad Joke Placeholder</p>
-        </section>
-    <div>
-        <!--image tag where a picture of the drink could go-->
-    </div>
-    <div>
-        <h2>Earlier Pairings</h2>
-        <ul>
-            <li>Placeholder list item</li>
-        </ul>
-    </div>
-    <footer>
-
-    </footer>
+    
+        <h1>Beers for Jeers</h1>
+    
+    <!-- A form to search for a brewery by city -->
+        <form id="userForm">
+            <label for="user-value">Enter a city name:</label>
+            <input type="text" id="user-value" name="user-value">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="info-box">
+            <!-- Breweries and jokes will be appended here -->
+        </div>
+        <footer>
+            <div>Come for the Beers and Stay for the Laughs</div>
+        
+        </footer>
+        
+    
     <script src="./assets/script.js"></script>
 </body>
+
+
+
 </html>
