@@ -6,17 +6,19 @@ var searchInput = document.querySelector("#userForm");
 var breweryApiUrl = 'https://api.openbrewerydb.org/breweries?limit=1&by_city=' + userInput
 var infoBox = document.querySelector("#info-box");
 
-//localStorage writing(?)
-var savedBrew = document.createElement("p");
-var savedBrewContent = document.createTextNode(localStorage.getItem("breweryString"));
-savedBrew.appendChild(savedBrewContent);
-infoBox.appendChild(savedBrew);
-
-var savedJoke = document.createElement("p");
-var savedJokeContent = document.createTextNode(localStorage.getItem("jokeString"));
-savedJoke.appendChild(savedJokeContent);
-infoBox.appendChild(savedJoke);
-
+//if statements that will write localStorage data if it's not null
+if (localStorage.getItem("breweryString") != null) {
+  var savedBrew = document.createElement("p");
+  var savedBrewContent = document.createTextNode(localStorage.getItem("breweryString"));
+  savedBrew.appendChild(savedBrewContent);
+  infoBox.appendChild(savedBrew);
+}
+if (localStorage.getItem("jokeString") != null) {
+  var savedJoke = document.createElement("p");
+  var savedJokeContent = document.createTextNode(localStorage.getItem("jokeString"));
+  savedJoke.appendChild(savedJokeContent);
+  infoBox.appendChild(savedJoke);
+}
 
 //this function will make the URL from user input that will be needed for the brewery API call.
 function urlMaker() {
@@ -57,17 +59,17 @@ function getBadJoke() {
   .then(function(response) {
     return response.json();
 })
-.then(function (data) {
-  console.log(data)
-  var joke = data.joke;
-  var jokeElement = document.createElement("p");
-  jokeElement.setAttribute("id", "jokeElement");
-  var jokeContent = document.createTextNode(joke);
-  jokeElement.appendChild(jokeContent);
-  infoBox.appendChild(jokeElement);
-  localStorage.setItem("jokeString", joke);
-  var savedDataJoke = localStorage.getItem("jokeString");
-  document.querySelector("#jokeElement").innerHTML = savedDataJoke;
+  .then(function (data) {
+    console.log(data)
+    var joke = data.joke;
+    var jokeElement = document.createElement("p");
+    jokeElement.setAttribute("id", "jokeElement");
+    var jokeContent = document.createTextNode(joke);
+    jokeElement.appendChild(jokeContent);
+    infoBox.appendChild(jokeElement);
+    localStorage.setItem("jokeString", joke);
+    var savedDataJoke = localStorage.getItem("jokeString");
+    document.querySelector("#jokeElement").innerHTML = savedDataJoke;
 })
 }
 
