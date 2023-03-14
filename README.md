@@ -34,8 +34,8 @@ When you use the search function on the app to search for a city, it will pull f
 There were multiple goals that we as a group were focused on during the process of building the app. The first was, obviously, to streamline our working process as a team to complete our app within time restraints. The second was to learn how to work in an enterprise setting within GitHub and deal with merging conflicts, using proper working branches, managing even workload, and consistantly reviewing eachothers code work.
 
 # App Example
-![Example of app landing page](./assets/images/project-1-readme.jpg)
-![Example of app working](./assets/images/readme-after-script.jpg)
+![Example of the app.](./assets/images/readme-example1.jpg)
+
 
 ## Links
 Organization Repo Link : https://github.com/Beers-for-Jeers-III
