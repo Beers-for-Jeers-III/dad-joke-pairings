@@ -1,8 +1,18 @@
 /* Style the body element */
 body {
 	font-family: Arial, sans-serif;
-	color: #3e8e41;
+	color: white;
 	background-color:beige;
+}
+
+.hero-image {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.choosechicago.com/uploads/2019/06/Revolution_4c0649ed-696b-40cd-9f75-59bbec8bff1e.jpg);
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
 }
 
 /* Style the h1 element */
@@ -10,13 +20,15 @@ body {
 h1 {
 	text-align: center;
 	font-size: 50px;
-	color: yellowgreen;
+	color: white;
 	font-family: 'Rampart One', cursive;
 }
 
+
+
 h2 {
 	font-family: 'Rampart One', cursive;
-	color: blue
+	color: white
 }
 
 /* Style the form element */
