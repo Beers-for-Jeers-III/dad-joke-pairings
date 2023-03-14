@@ -38,11 +38,13 @@ function firstCallAttempt (breweryApiUrl) {
     .then(function (data) {
       //console.log("brewery name", data[0].name);
       var brewName = document.createElement("p");
-      var brewContent = document.createTextNode(data[0].name);
+      var objectLength = Object.keys(data).length
+      var rando = Math.floor(Math.random() * objectLength);
+      var brewContent = document.createTextNode(data[rando].name);
       brewName.setAttribute("id", "brewElement");
       brewName.appendChild(brewContent);
       infoBox.appendChild(brewName);
-      localStorage.setItem("breweryString", data[0].name);
+      localStorage.setItem("breweryString", data[rando].name);
       var savedDataBrew = localStorage.getItem("breweryString");
       document.querySelector("#brewElement").innerHTML = savedDataBrew;
 
