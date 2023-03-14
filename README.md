@@ -26,6 +26,7 @@ Our app was created using
     * Css
     * Google Fonts
     * Local Storage
+    * Bulma
 
 ## Function
 When you use the search function on the app to search for a city, it will pull from 2 seperate APIs to provide a pairing of a random brewery in the city, as well as a random, (appropriate), dad joke.
