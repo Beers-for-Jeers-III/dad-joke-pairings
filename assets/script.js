@@ -46,6 +46,7 @@ function firstCallAttempt (breweryApiUrl) {
       localStorage.setItem("breweryString", data[rando].name);
       var savedDataBrew = localStorage.getItem("breweryString");
       document.querySelector("#brewElement").innerHTML = savedDataBrew;
+      userValue.value = "";
 
     }
 )};
