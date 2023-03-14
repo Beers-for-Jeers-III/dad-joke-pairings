@@ -1,5 +1,4 @@
 //variables that will be used in this app
-var jokeApiUrl = "https://api.humorapi.com/jokes/search?number=1&include-tags=dad&api-key=e4618d46550a4776901fb44e793e790e";
 var userInput = "";
 var userValue = document.querySelector("#user-value");
 var searchInput = document.querySelector("#userForm");
